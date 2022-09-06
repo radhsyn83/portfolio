@@ -44,8 +44,8 @@ class _NavbarDesktopState extends State<NavbarDesktop> {
     return ValueListenableBuilder(
       valueListenable: widget.sectionNotifier,
       builder: (context, value, child) {
-        return Container(
-          // duration: const Duration(milliseconds: 100),
+        return AnimatedContainer(
+          duration: const Duration(milliseconds: 100),
           padding: EdgeInsets.symmetric(
               horizontal: 100, vertical: isLightToolbar ? 10 : 50),
           decoration: BoxDecoration(

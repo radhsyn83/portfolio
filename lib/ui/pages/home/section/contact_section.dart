@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/helpers/responsive.dart';
 import 'package:portfolio/helpers/section.dart';
 import 'package:portfolio/ui/widgets/custom_elevation.dart';
 import 'package:portfolio/ui/widgets/search_field.dart';
@@ -24,7 +25,9 @@ class ContactSection extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             color: themes.primaryColorDark,
           ),
-          padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 50),
+          padding: ResponsiveWidget.isLargeScreen(context)
+              ? const EdgeInsets.symmetric(horizontal: 80, vertical: 50)
+              : const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
           child: Column(
             children: [
               Text(

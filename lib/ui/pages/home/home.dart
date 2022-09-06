@@ -32,6 +32,7 @@ class HomeView extends StatelessWidget {
           sections: sections,
           sectionNotifier: sectionNotifier,
         ),
+        smallScreen: Container(color: Colors.amber),
       ),
     );
   }

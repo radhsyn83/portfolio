@@ -72,17 +72,22 @@ class AboutSection extends StatelessWidget {
                                 padding:
                                     const EdgeInsets.symmetric(vertical: 10),
                                 child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Image.asset(
                                       e.icon,
                                       height: 18,
                                     ),
                                     const SizedBox(width: 20),
-                                    Text(e.title,
-                                        style: GoogleFonts.openSans(
-                                            fontSize: 14,
-                                            fontWeight: FontWeight.bold,
-                                            color: Colors.black)),
+                                    Expanded(
+                                      child: Text(e.title,
+                                          maxLines: 2,
+                                          overflow: TextOverflow.ellipsis,
+                                          style: GoogleFonts.openSans(
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black)),
+                                    ),
                                   ],
                                 ),
                               ))

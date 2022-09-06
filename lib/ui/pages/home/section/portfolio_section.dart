@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/helpers/menus.dart';
 // ignore: depend_on_referenced_packages
 import 'package:collection/collection.dart';
+import 'package:portfolio/helpers/responsive.dart';
 import 'package:portfolio/helpers/section.dart';
 
 class PortolioSection extends StatefulWidget {
@@ -30,7 +31,7 @@ class _PortolioSectionState extends State<PortolioSection> {
     var themes = Theme.of(context);
 
     return Container(
-      margin: const EdgeInsets.only(left: 130, right: 130, top: 80),
+      margin: const EdgeInsets.only(left: 100, right: 100, top: 80),
       child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -127,7 +128,7 @@ class _Projects extends StatefulWidget {
 class _ProjectsState extends State<_Projects> {
   List<List<ProjectItem>> splits() {
     List<List<ProjectItem>> chunks = [];
-    int chunkSize = 6;
+    int chunkSize = ResponsiveWidget.isLargeScreen(context) ? 6 : 4;
     for (var i = 0; i < widget.projects.length; i += chunkSize) {
       chunks.add(widget.projects.sublist(
           i,
@@ -149,7 +150,7 @@ class _ProjectsState extends State<_Projects> {
           return GridView.count(
             padding: EdgeInsets.zero,
             shrinkWrap: true,
-            crossAxisCount: 3,
+            crossAxisCount: ResponsiveWidget.isLargeScreen(context) ? 3 : 2,
             children: item
                 .map((c) => InkWell(
                       hoverColor: Colors.transparent,
@@ -215,7 +216,7 @@ class _ProjectsState extends State<_Projects> {
           );
         },
         options: CarouselOptions(
-          aspectRatio: 6 / 4,
+          aspectRatio: ResponsiveWidget.isLargeScreen(context) ? 6 / 4 : 1 / 1,
           enableInfiniteScroll: false,
           viewportFraction: 1.0,
         ));

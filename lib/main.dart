@@ -33,6 +33,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      title: "Portfolio - Fathur Radhy",
       themeMode: ThemeMode.light,
       theme: CustomTheme.lightTheme,
       darkTheme: CustomTheme.darkTheme,

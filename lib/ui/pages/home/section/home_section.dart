@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/helpers/responsive.dart';
 import 'package:portfolio/helpers/section.dart';
 import 'package:portfolio/ui/widgets/custom_elevation.dart';
 
@@ -11,6 +12,7 @@ class HomeSection extends StatelessWidget {
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;
     var themes = Theme.of(context);
+    var isLarge = ResponsiveWidget.isLargeScreen(context);
 
     return Container(
       color: Theme.of(context).backgroundColor,
@@ -35,16 +37,18 @@ class HomeSection extends StatelessWidget {
               children: [
                 Text(
                   "Hello there,",
-                  style: GoogleFonts.openSans(color: Colors.grey, fontSize: 20),
+                  style: GoogleFonts.openSans(
+                      color: Colors.grey, fontSize: isLarge ? 20 : 14),
                 ),
                 Text(
                   "I'm Fathur.",
                   style: GoogleFonts.sora(
-                      fontWeight: FontWeight.w800, fontSize: 80),
+                      fontWeight: FontWeight.w800, fontSize: isLarge ? 80 : 60),
                 ),
                 Text(
                   "Professional Mobile Developer based in \nIndonesia and love to play games",
-                  style: GoogleFonts.openSans(color: Colors.grey, fontSize: 20),
+                  style: GoogleFonts.openSans(
+                      color: Colors.grey, fontSize: isLarge ? 20 : 14),
                 ),
                 const SizedBox(height: 20),
                 CustomElevation(
