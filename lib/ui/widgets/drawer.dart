@@ -32,7 +32,7 @@ class DrawerMenu extends StatelessWidget {
         valueListenable: sectionNotifier,
         builder: (context, value, child) {
           return Container(
-            color: Colors.amber,
+            color: themes.primaryColorDark,
             child: Column(
               children: [
                 Padding(
@@ -43,7 +43,10 @@ class DrawerMenu extends StatelessWidget {
                       onPressed: () {
                         scaffoldKey.currentState!.closeDrawer();
                       },
-                      icon: const Icon(Icons.close),
+                      icon: const Icon(
+                        Icons.close,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
@@ -72,10 +75,10 @@ class DrawerMenu extends StatelessWidget {
                                 e.title,
                                 style: GoogleFonts.sora(
                                     fontWeight:
-                                        e.isActived ? FontWeight.bold : null,
+                                        e.isActived ? FontWeight.w900 : null,
                                     color: e.isHover || e.isActived
-                                        ? themes.primaryColor
-                                        : Colors.black,
+                                        ? Colors.yellow[500]
+                                        : Colors.white,
                                     fontSize: 16),
                               ),
                             ),
@@ -91,9 +94,8 @@ class DrawerMenu extends StatelessWidget {
                                         height: 6,
                                         width: 6,
                                         decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          color: themes.primaryColor,
-                                        ),
+                                            shape: BoxShape.circle,
+                                            color: Colors.yellow[500]),
                                       ),
                                     )))
                           ],
