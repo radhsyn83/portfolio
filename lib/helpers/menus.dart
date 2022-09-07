@@ -167,4 +167,9 @@ extension MenusExt on List<Menus> {
     }
     menus[index].isActived = true;
   }
+
+  int get seletedTab {
+    var menus = this;
+    return menus.indexWhere((element) => element.isActived);
+  }
 }

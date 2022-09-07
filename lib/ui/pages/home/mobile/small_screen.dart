@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/helpers/menus.dart' as menus;
 import 'package:portfolio/helpers/section.dart';
-import 'package:portfolio/ui/pages/home/section/about_section.dart';
-import 'package:portfolio/ui/pages/home/section/contact_section.dart';
-import 'package:portfolio/ui/pages/home/section/home_section.dart';
-import 'package:portfolio/ui/pages/home/section/portfolio_section.dart';
-import 'package:portfolio/ui/pages/home/section/services_section.dart';
+import 'package:portfolio/ui/pages/home/mobile/section/about_section.dart';
+import 'package:portfolio/ui/pages/home/mobile/section/contact_section.dart';
+import 'package:portfolio/ui/pages/home/mobile/section/home_section.dart';
+import 'package:portfolio/ui/pages/home/mobile/section/portfolio_section.dart';
+import 'package:portfolio/ui/pages/home/mobile/section/services_section.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
-class ScreenLarge extends StatefulWidget {
+class ScreenSmall extends StatefulWidget {
   final List<menus.Menus> sections;
   final ValueNotifier<Section?> sectionNotifier;
 
-  const ScreenLarge({
+  const ScreenSmall({
     Key? key,
     required this.sections,
     required this.sectionNotifier,
   }) : super(key: key);
 
   @override
-  State<ScreenLarge> createState() => _ScreenLargeState();
+  State<ScreenSmall> createState() => _ScreenSmall();
 }
 
-class _ScreenLargeState extends State<ScreenLarge> {
+class _ScreenSmall extends State<ScreenSmall> {
   /// Controller to scroll or jump to a particular item.
   final ItemScrollController _itemScrollController = ItemScrollController();
 
@@ -116,6 +116,7 @@ class _ScreenLargeState extends State<ScreenLarge> {
             content = ContactSection(notifier: widget.sectionNotifier);
             break;
           default:
+            content = Container();
         }
         return content;
       },
