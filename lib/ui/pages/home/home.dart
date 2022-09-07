@@ -36,7 +36,12 @@ class HomeView extends StatelessWidget {
                 sectionNotifier: sectionNotifier,
               ),
       ),
-      drawer: const Drawer(child: DrawerMenu()),
+      drawer: Drawer(
+          child: DrawerMenu(
+        sections: sections,
+        sectionNotifier: sectionNotifier,
+        scaffoldKey: _scaffoldKey,
+      )),
       body: ResponsiveWidget(
         largeScreen: ScreenLarge(
           sections: sections,
